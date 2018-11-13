@@ -371,6 +371,10 @@ Prefab:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1026574556191510, guid: 9b3dfaa891f420747a36c0b0f8e19066, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b3dfaa891f420747a36c0b0f8e19066, type: 2}
   m_IsPrefabParent: 0
@@ -387,7 +391,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4104815073710400, guid: 847e720b3feb2ae4f97f60c7b6b57741, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.994
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: 4104815073710400, guid: 847e720b3feb2ae4f97f60c7b6b57741, type: 2}
       propertyPath: m_LocalPosition.z
@@ -426,12 +430,12 @@ Prefab:
     - target: {fileID: 61472651098678372, guid: 847e720b3feb2ae4f97f60c7b6b57741,
         type: 2}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61472651098678372, guid: 847e720b3feb2ae4f97f60c7b6b57741,
         type: 2}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.64
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212349902208342660, guid: 847e720b3feb2ae4f97f60c7b6b57741,
         type: 2}
@@ -442,6 +446,46 @@ Prefab:
     - target: {fileID: 212349902208342660, guid: 847e720b3feb2ae4f97f60c7b6b57741,
         type: 2}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61472651098678372, guid: 847e720b3feb2ae4f97f60c7b6b57741,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.79141855
+      objectReference: {fileID: 0}
+    - target: {fileID: 61472651098678372, guid: 847e720b3feb2ae4f97f60c7b6b57741,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.2346363
+      objectReference: {fileID: 0}
+    - target: {fileID: 61472651098678372, guid: 847e720b3feb2ae4f97f60c7b6b57741,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.4396354
+      objectReference: {fileID: 0}
+    - target: {fileID: 61472651098678372, guid: 847e720b3feb2ae4f97f60c7b6b57741,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.5193322
+      objectReference: {fileID: 0}
+    - target: {fileID: 58242308307485188, guid: 847e720b3feb2ae4f97f60c7b6b57741,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 58242308307485188, guid: 847e720b3feb2ae4f97f60c7b6b57741,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.8798961
+      objectReference: {fileID: 0}
+    - target: {fileID: 58242308307485188, guid: 847e720b3feb2ae4f97f60c7b6b57741,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.16989607
+      objectReference: {fileID: 0}
+    - target: {fileID: 114354996771278536, guid: 847e720b3feb2ae4f97f60c7b6b57741,
+        type: 2}
+      propertyPath: groundContactFilter.useNormalAngle
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
