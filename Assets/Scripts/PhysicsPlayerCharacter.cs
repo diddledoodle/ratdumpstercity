@@ -29,18 +29,30 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     [SerializeField]
     private Collider2D groundDetectTrigger;
 
+    private Animator playeranimator;
+
+
     private float horizontalInput;
     private bool isOnGround;
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
     private Checkpoint currentCheckpoint;
-	
-	// Update is called once per frame
-	void Update ()
+
+    private void Start()
+    {
+        playeranimator = GetComponent<Animator>();
+
+    }
+
+    // Update is called once per frame
+
+    void Update ()
     {
         UpdateIsOnGround();
         UpdateHorizontalInput();
 
         HandleJumpInput();
+        playeranimator.SetFloat("animSpeed", Mathf.Abs(rb2d.velocity.x));
+
 
     }
 
@@ -88,6 +100,17 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
         Vector2 clampedVelocity = rb2d.velocity;
         clampedVelocity.x = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
         rb2d.velocity = clampedVelocity;
+
+        if (rb2d.velocity.x > 0.1)
+        {
+            transform.localScale = new Vector3(1, 1, 1);  
+        }
+        else if (rb2d.velocity.x < -0.1)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+       
+
     }
 
     public void Respawn()

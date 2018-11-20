@@ -97,10 +97,10 @@ TextureImporter:
       name: mouse_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 10
         y: 96
-        width: 32
-        height: 32
+        width: 12
+        height: 22
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,10 +117,10 @@ TextureImporter:
       name: mouse_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
+        x: 42
+        y: 97
+        width: 12
+        height: 22
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,10 +137,10 @@ TextureImporter:
       name: mouse_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 74
         y: 96
-        width: 32
-        height: 32
+        width: 12
+        height: 22
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,10 +157,10 @@ TextureImporter:
       name: mouse_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 64
-        width: 32
-        height: 32
+        width: 25
+        height: 14
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +177,10 @@ TextureImporter:
       name: mouse_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
+        x: 35
+        y: 65
+        width: 22
+        height: 13
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: mouse_5
       rect:
         serializedVersion: 2
-        x: 64
+        x: 68
         y: 64
-        width: 32
-        height: 32
+        width: 23
+        height: 13
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
