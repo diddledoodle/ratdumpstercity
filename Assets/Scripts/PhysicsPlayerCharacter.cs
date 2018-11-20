@@ -37,6 +37,14 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
     private Checkpoint currentCheckpoint;
 
+    
+
+
+
+    [SerializeField]
+    private LayerMask whatIsGround;
+    
+
     private void Start()
     {
         playeranimator = GetComponent<Animator>();
@@ -60,7 +68,6 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     {
         UpdatePhysicsMaterial();
         Move();
-
     }
 
     private void UpdatePhysicsMaterial()
@@ -90,7 +97,9 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump") & isOnGround )
         {
+            playeranimator.SetBool("Ground", false);
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            playeranimator.SetTrigger("Jump");
         }
     }
 
@@ -109,7 +118,16 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
+
+
        
+        playeranimator.SetBool("Ground", isOnGround);
+
+        playeranimator.SetFloat("vSpeed", rb2d.velocity.y);
+
+
+        float move = Input.GetAxis("Horizontal");
+
 
     }
 
