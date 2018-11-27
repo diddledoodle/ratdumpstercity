@@ -60,6 +60,8 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
 
         HandleJumpInput();
         playeranimator.SetFloat("animSpeed", Mathf.Abs(rb2d.velocity.x));
+        playeranimator.SetFloat("vSpeed", rb2d.velocity.y);
+        playeranimator.SetBool("Ground", isOnGround);
 
 
     }
@@ -97,7 +99,7 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump") & isOnGround )
         {
-            playeranimator.SetBool("Ground", false);
+           
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             playeranimator.SetTrigger("Jump");
         }
@@ -123,7 +125,7 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
        
         playeranimator.SetBool("Ground", isOnGround);
 
-        playeranimator.SetFloat("vSpeed", rb2d.velocity.y);
+        
 
 
         float move = Input.GetAxis("Horizontal");
