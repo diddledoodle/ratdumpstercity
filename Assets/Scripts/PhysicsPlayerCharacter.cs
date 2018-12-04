@@ -37,8 +37,8 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
     private Checkpoint currentCheckpoint;
 
-    
-
+  
+    public bool isDead;
 
 
     [SerializeField]
