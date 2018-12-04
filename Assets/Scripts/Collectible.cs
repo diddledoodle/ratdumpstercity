@@ -6,7 +6,10 @@ public class Collectible : MonoBehaviour {
 
     private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
+
+    [SerializeField]
     private BoxCollider2D boxCollider2D;
+
     private static int coinCount;
 
     private void Start()
