@@ -32,13 +32,13 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     private Animator playeranimator;
 
 
+    public bool canDoInput = true;
+    private bool canDoubleJump;
     private float horizontalInput;
     private bool isOnGround;
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
     private Checkpoint currentCheckpoint;
 
-  
-    public bool isDead;
 
 
     [SerializeField]
@@ -56,9 +56,14 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     void Update ()
     {
         UpdateIsOnGround();
-        UpdateHorizontalInput();
 
-        HandleJumpInput();
+        if (canDoInput)
+        {
+            UpdateHorizontalInput();
+
+            HandleJumpInput();
+        }
+
         playeranimator.SetFloat("animSpeed", Mathf.Abs(rb2d.velocity.x));
         playeranimator.SetFloat("vSpeed", rb2d.velocity.y);
         playeranimator.SetBool("Ground", isOnGround);
@@ -69,7 +74,12 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     private void FixedUpdate()
     {
         UpdatePhysicsMaterial();
-        Move();
+
+        if (canDoInput)
+        {
+            Move();
+        }
+            
     }
 
     private void UpdatePhysicsMaterial()
@@ -103,6 +113,14 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             playeranimator.SetTrigger("Jump");
         }
+
+        else if (Input.GetButtonDown("Jump"))
+        {
+
+            rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            playeranimator.SetTrigger("Jump");
+        }
+
     }
 
     private void Move()
@@ -135,6 +153,8 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
 
     public void Respawn()
     {
+        canDoInput = true; 
+
         if (currentCheckpoint == null)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

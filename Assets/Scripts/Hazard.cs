@@ -5,16 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class Hazard : MonoBehaviour
 {
+    PhysicsPlayerCharacter player;
+    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player entered the hazard.");
-            PhysicsPlayerCharacter player = collision.GetComponent<PhysicsPlayerCharacter>();
+            player = collision.GetComponent<PhysicsPlayerCharacter>();
 
-            player.isDead = true;
+            Debug.Log("Player entered the hazard.");
           
-            player.Respawn();
+            
+
+
+            player.canDoInput = false;
+            player.GetComponent<Rigidbody2D>().velocity = new Vector3 (0,0,0);
+            player.transform.localScale = new Vector3(player.transform.localScale.x, -1, player.transform.localScale.z);
+            
+
+            StartCoroutine(pauseenumerator());
+          
+
+            
 
         }
         else
@@ -22,6 +36,15 @@ public class Hazard : MonoBehaviour
             Debug.Log("Something other than the player entered the hazard.");
         }
         
+    }
+
+    IEnumerator pauseenumerator()
+    {
+
+        yield return new WaitForSeconds(0.7f);
+
+        player.Respawn();
+ 
     }
 
 }
