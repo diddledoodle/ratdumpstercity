@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PhysicsPlayerCharacter : MonoBehaviour {
-
+    #region
     [SerializeField]
     private float accelerationForce = 5;
 
@@ -27,10 +27,11 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     private ContactFilter2D groundContactFilter;
 
     [SerializeField]
-    private Collider2D groundDetectTrigger;
+    private Collider2D groundDetectTrigger
+    #endregion
+
 
     private Animator playeranimator;
-
 
     public bool canDoInput = true;
     private bool canDoubleJump;
@@ -39,16 +40,12 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
     private Checkpoint currentCheckpoint;
 
-
-
     [SerializeField]
     private LayerMask whatIsGround;
     
-
     private void Start()
     {
         playeranimator = GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
@@ -63,12 +60,9 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
 
             HandleJumpInput();
         }
-
         playeranimator.SetFloat("animSpeed", Mathf.Abs(rb2d.velocity.x));
         playeranimator.SetFloat("vSpeed", rb2d.velocity.y);
         playeranimator.SetBool("Ground", isOnGround);
-
-
     }
 
     private void FixedUpdate()
@@ -79,7 +73,6 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
         {
             Move();
         }
-            
     }
 
     private void UpdatePhysicsMaterial()
@@ -97,7 +90,6 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     {
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
         //Debug.Log("isOnGround?: " + isOnGround);
-
     }
 
     private void UpdateHorizontalInput()
@@ -109,14 +101,12 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump") & isOnGround )
         {
-           
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             playeranimator.SetTrigger("Jump");
         }
 
         else if (Input.GetButtonDown("Jump"))
         {
-
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             playeranimator.SetTrigger("Jump");
         }
@@ -139,16 +129,9 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-
-       
         playeranimator.SetBool("Ground", isOnGround);
 
-        
-
-
         float move = Input.GetAxis("Horizontal");
-
-
     }
 
     public void Respawn()
@@ -157,21 +140,17 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
 
         if (currentCheckpoint == null)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
         else
         {
             rb2d.velocity = Vector2.zero;
             transform.position = currentCheckpoint.transform.position;
         }
-        
-    }
-
+     }
     public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
     {
         if (currentCheckpoint != null)
             currentCheckpoint.SetIsActivated(false);
 
-       
         currentCheckpoint = newCurrentCheckpoint;
         currentCheckpoint.SetIsActivated(true);
     }

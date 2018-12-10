@@ -22,16 +22,11 @@ public class Checkpoint : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         UpdateColor();
-        
-
     }
-
     private void Update()
     {
         UpdateRotation();
-       
     }
-
     private void UpdateColor()
     {
         Color color = inactivatedColor;
@@ -41,7 +36,6 @@ public class Checkpoint : MonoBehaviour
 
         spriteRenderer.color = color;
     }
-
     private void UpdateScale()
     {
         float scale = inactivatedScale;
@@ -60,8 +54,6 @@ public class Checkpoint : MonoBehaviour
 
         transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
-
-
     public void SetIsActivated(bool value)
     {
         isActivated = value;
@@ -78,6 +70,5 @@ public class Checkpoint : MonoBehaviour
             audioSource.Play();
 
         }
-
     }
 }
