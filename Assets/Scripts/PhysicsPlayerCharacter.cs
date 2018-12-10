@@ -27,7 +27,7 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
     private ContactFilter2D groundContactFilter;
 
     [SerializeField]
-    private Collider2D groundDetectTrigger
+    private Collider2D groundDetectTrigger;
     #endregion
 
 
