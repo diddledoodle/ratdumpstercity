@@ -473,6 +473,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 2.5826168
       objectReference: {fileID: 0}
+    - target: {fileID: 114283749988819768, guid: ce31f04232411d74b885644eb340a703,
+        type: 2}
+      propertyPath: scenetoLoad
+      value: EndCredits
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61047563588666604, guid: ce31f04232411d74b885644eb340a703, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ce31f04232411d74b885644eb340a703, type: 2}
@@ -1949,7 +1954,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4046849359178858, guid: 633402137214dc44ba67f781faece728, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 4046849359178858, guid: 633402137214dc44ba67f781faece728, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1974,6 +1979,11 @@ Prefab:
     - target: {fileID: 4046849359178858, guid: 633402137214dc44ba67f781faece728, type: 2}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 212629458132442868, guid: 633402137214dc44ba67f781faece728,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 633402137214dc44ba67f781faece728, type: 2}
