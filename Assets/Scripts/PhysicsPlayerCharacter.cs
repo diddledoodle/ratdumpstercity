@@ -42,10 +42,15 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
 
     [SerializeField]
     private LayerMask whatIsGround;
-    
+
+    [SerializeField]
+    private AudioClip jumpclip;
+    private AudioSource audioSource;
+
     private void Start()
     {
         playeranimator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -99,16 +104,25 @@ public class PhysicsPlayerCharacter : MonoBehaviour {
 
     private void HandleJumpInput()
     {
+        audioSource = GetComponent<AudioSource>();
+
         if (Input.GetButtonDown("Jump") & isOnGround )
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             playeranimator.SetTrigger("Jump");
+            audioSource.clip = jumpclip;
+            audioSource.Play();
+
+
+
         }
 
         else if (Input.GetButtonDown("Jump"))
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             playeranimator.SetTrigger("Jump");
+            audioSource.clip = jumpclip;
+            audioSource.Play();
         }
 
     }

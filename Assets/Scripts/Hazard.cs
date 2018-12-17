@@ -7,6 +7,8 @@ public class Hazard : MonoBehaviour
 {
     PhysicsPlayerCharacter player;
 
+    [SerializeField]
+    AudioClip deathclip;
     AudioSource audioSource;
     SpriteRenderer spriteRenderer;
 
@@ -19,7 +21,7 @@ public class Hazard : MonoBehaviour
             audioSource = player.GetComponent<AudioSource>();
 
             Debug.Log("Player entered the hazard.");
-
+            audioSource.clip = deathclip;
             audioSource.Play();
 
             player.canDoInput = false;
